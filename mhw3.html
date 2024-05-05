@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prenota tour, escursioni e attività online | GetYourGuide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mhw3.css" />
+    <script src="mhw3.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <header>
+        <div id="head">
+            <div class="nav_bar">
+                <nav class="logo_search">
+                        <a href="#"><div class="logo_img"></div></a>
+                        <form id="search_input">
+                            <input class="text_research" type="text" placeholder="Cerca su GetYourGuide...">
+                            <input type="submit" class="search-button" value="Cerca">
+                        </form>
+                </nav>
+                <nav class="menu_homepage">
+                        <a class="menu_item" data-menu-link="Partner" href="#"><span class="menu-option">Diventa partner</span></a>
+                        <a class="menu_item" data-menu-link="Preferiti" href="#"><img class ="icon-menu" src="heart.png"><span class="menu-option">Preferiti</span></a>
+                        <a class="menu_item" data-menu-link="Carrello" href="#"><img class ="icon-menu" src="shopping-cart-1.png"><span class="menu-option">Carrello</span></a>
+                        <div class="menu_item" data-menu-link="Profile" href="#">
+                            <img class ="icon-menu" src="profile-circle.png">
+                            <span class="menu-option">Profilo</span>
+                            <div class="profile-menu hidden">
+                                <a class="pr-link" data-id="login" href="#">
+                                    <div class="profile-item">
+                                        <img class ="icon-menu" src="login.svg">
+                                        <span class="pr-item-description">Accedi o registrati</span>
+                                    </div>
+                                </a>
+                                <a class="pr-link" href="#">
+                                    <div class="profile-item">
+                                        <img class ="icon-menu" src="language.svg">
+                                        <span class="pr-item-description">Lingua</span>
+                                    </div>
+                                </a>
+                                <a class="pr-link" href="#">
+                                    <div class="profile-item">
+                                        <img class ="icon-menu" src="currency.svg">
+                                        <span class="pr-item-description">Valuta</span>
+                                    </div>
+                                </a>
+                                <a class="pr-link" href="#">
+                                    <div class="profile-item">
+                                        <img class ="icon-menu" src="sun.svg">
+                                        <span class="pr-item-description">Tema</span>
+                                    </div>
+                                </a>
+                                <a class="pr-link" href="#">
+                                    <div class="profile-item">
+                                        <img class ="icon-menu" src="help.svg">
+                                        <span class="pr-item-description">Centro Assistenza</span>
+                                    </div>
+                                </a>
+                                <a class="pr-link" href="#">
+                                    <div class="profile-item">
+                                        <img class ="icon-menu" src="smartphone.svg">
+                                        <span class="pr-item-description">Scarica l'app</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                </nav>
+            </div>
+            <div id="search_input_mobile">
+                <input class="text_research" type="search" placeholder="Dove vuoi andare?">
+            </div>
+            <section class="header-text-description">
+                <h1 class="title">Ricordi di viaggio <br> indimenticabili</h1>
+                <div class="img-with-text"><img src="https://cdn.getyourguide.com/tf/assets/static/home/original_icon.svg"><span class="white-text-img">Originals by GetYourGuide</span></div>
+                <span class="subheader">Esplora Amsterdam in modo autentico</span>
+                <a class="go-to-experience-link" href="#"><span>Scopri di più su questa esperienza ></span></a>
+            </section>
+            <section class="header-themes-menu">
+                <a class="themes-menu-item" href="#" data-menu-category="Sport">Sport</a>
+                <a class="themes-menu-item" href="#" data-menu-category="Culture">Cultura</a>
+                <a class="themes-menu-item" href="#" data-menu-category="Food">Gastronomia</a>
+                <a class="themes-menu-item" href="#" data-menu-category="Nature">Natura</a>
+            </section>
+        </div>
+        <div id="start-header-block"></div>
+        <div id="end-header-block"></div>
+        <div id="blue-opacity"></div>
+    </header>
+    <div class="auth-modal-view hidden" data-ref="email-register">
+        <div class="modal-container">
+            <div class="c-modal-header">
+                <img class="icon-menu" src="close.svg">
+                <h3 class="c-modal-header-title">Accedi o registrati</h3>
+            </div>
+            <section class="c-modal-content">
+                <div class="c-modal-content-description">
+                    Visualizza e consulta i tuoi biglietti più facilmente su qualsiasi dispositivo con il tuo account GetYourGuide.
+                </div>
+                <div class="c-modal-authentication-buttons">
+                    <div class="modal-view-auth-button">
+                        <img class="icon-button-auth" src="google.svg">
+                    </div>
+                    <div class="modal-view-auth-button">
+                        <img class="icon-button-auth" src="apple.svg">
+                    </div>
+                    <div class="modal-view-auth-button">
+                        <img class="icon-button-auth" src="facebook.svg">
+                    </div>
+                </div>
+                <form data-ref="email-register">
+                    <div class="c-input-container">
+                        <div class="c-input-innercontainer">
+                            <span class="c-input-des">Indirizzo email</span>
+                            <input class="c-input-style" id="email-input" type="text">
+                        </div>                    
+                    </div>
+                    <div class="input-error hidden">Email inserita non valida</div>
+                    <input class="c-input-submit-style" type="submit" value="Continua con un indirizzo email">
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="auth-modal-view hidden" data-ref="login">
+        <div class="modal-container">
+            <div class="c-modal-header">
+                <img class="icon-menu" src="close.svg">
+                <h3 class="c-modal-header-title">Registrati</h3>
+            </div>
+            <section class="c-modal-content">
+                <form data-ref="login">
+                    <div class="c-input-container">
+                        <div class="c-input-innercontainer">
+                            <span class="c-input-des">Email</span>
+                            <input class="c-input-style" id="email-inserted" type="text" readonly>
+                        </div>                    
+                    </div>
+                    <div class="c-input-container">
+                        <div class="c-input-innercontainer">
+                            <span class="c-input-des">Nome completo</span>
+                            <input class="c-input-style" id="fullname-input" type="text">
+                        </div>                    
+                    </div>
+                    <div class="c-input-container">
+                        <div class="c-input-innercontainer">
+                            <span class="c-input-des">Password</span>
+                            <input class="c-input-style" id="password-input" type="password">
+                        </div>                    
+                    </div>
+                    <div class="c-input-container-withchechbox">
+                        <input type="checkbox" id="promotionCheckbox">
+                        <label id="prCheckLabel"for="promotionCheckbox">Desidero ricevere sconti e altre offerte per email</label>
+                        <div>Inoltre, ti invieremo email relative alle attività prenotate, tra cui dei promemoria per ricordarti di lasciare una recensione. Puoi disattivare tutte le email non essenziali tramite le impostazioni del tuo account.</div>
+                    </div>
+                    <input class="c-input-submit-style" type="submit" value="Crea un account">
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="scroll-header-container hidden">
+        <div class="header-themes-menu-onScroll">
+            <a class="themes-menu-item" data-menu-category="Sport" href="#">Sport</a>
+            <a class="themes-menu-item" data-menu-category="Culture" href="#">Cultura</a>
+            <a class="themes-menu-item" data-menu-category="Food" href="#">Gastronomia</a>
+            <a class="themes-menu-item" data-menu-category="Nature" href="#">Natura</a>
+        </div>
+    </div>
+    <!--Contenuto della pagina web-->
+    <article id="home-page">
+        <section class="barra-contenuti-homepage">
+            <h2 class="bch-title">Esperienze culturali straordinarie</h2>
+            <div class="bch-container">
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/1f08c17ad88b43cfb98ae5fa204f8d1933c6a1818dbbb341cb40334f12a6e356.jpg/132.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Londra: tour a piedi sulle tracce di Jack lo squartatore</span>
+                        <span class="bch-block-activity-description">2 ore</span>
+
+                        <span class="bch-block-activity-price">Da  18,71 € a persona</span>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/02804a4e26cd4eaf7102b59fbeffc4fd14f80b48eb0af36e2dddeeb5b5ead364.jpg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Capo Sunio e Tempio di Poseidone: tour al tramonto da Atene</span>
+                        <span class="bch-block-activity-description">5 ore</span>
+
+                        <span class="bch-block-activity-price">Da  19,50 € a persona</span>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/6c8eeb6ce247732a.jpeg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Londra: vivi il cambio della guardia</span>
+                        <span class="bch-block-activity-description">105 minuti - Gruppo ristretto</span>
+
+                        <span class="bch-block-activity-price">Da  23,38 € a persona</span>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/ce30dfb729a9725a2708fdc69dd0b54ee223605a9dab24e50feb8a88726a9010.jpg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Marrakech: Tour di mezza giornata storico e culturale</span>
+                        <span class="bch-block-activity-description">3 ore</span>
+
+                        <span class="bch-block-activity-price">Da 29 € a persona</span>
+                    </div>
+                </a>
+            </div>
+                <div class="bch-container">
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/d023451efbb78671.jpeg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Cambridge: Tour guidato a piedi dagli studenti dell'Università di Harvard</span>
+                        <span class="bch-block-activity-description">70 minuti</span>
+
+                        <span class="bch-block-activity-price">Da  21,01 € a persona</span>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/11fe6cbce2cac59a.jpeg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">ESCURSIONE DI UN GIORNO</span>
+                        <span class="bch-block-activity-title">Da Manchester: Tour del Galles del Nord, Snowdonia e Chester</span>
+                        <span class="bch-block-activity-description">11 ore</span>
+
+                        <span class="bch-block-activity-price">Da  76,14 € a persona</span>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/5d6d13a9b46c8.jpeg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Berlino: Tour a piedi del Terzo Reich e della Guerra Fredda</span>
+                        <span class="bch-block-activity-description">2 ore</span>
+
+                        <span class="bch-block-activity-price">Da  19,90 € a persona</span>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/tour/ce64fbd0e83f3a3c.jpeg/98.jpg">
+                        <img src="heart.png" class="like-icon">
+                    <div class="bch-block-text-container">
+                        <span class="bch-block-activity-type">TOUR GUIDATO</span>
+                        <span class="bch-block-activity-title">Roma: Scopri la Fontana di Trevi e il tour dei sotterranei</span>
+                        <span class="bch-block-activity-description">40 minuti - Gruppo ristretto</span>
+
+                        <span class="bch-block-activity-price">Da 35 € a persona</span>
+                    </div>
+                </a>
+            </div>
+            </div>
+            
+        </section>
+        <section class="barra-contenuti-homepage">
+            <h2 class="bch-title">Le attrazioni culturali da non perdere</h2>
+            <div class="bch-container-medium">
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/53bffbaac9423-m1398847398.jpg/49.webp">
+                    <div class="bch-block-text-container">
+                        <h3 class="bch-block-activity-title">Parco Guell</h3>
+                        <h6 class="bch-block-activity-subtitle">96 attività</h6>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/e2c93da9b25ff1c7.jpeg/49.webp">
+                    <div class="bch-block-text-container">
+                        <h3 class="bch-block-activity-title">Museo del Louvre</h3>
+                        <h6 class="bch-block-activity-subtitle">390 attività</h6>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/5ca348c3482ea.jpeg/49.webp">
+                    <div class="bch-block-text-container">
+                        <h3 class="bch-block-activity-title">Torre di Londra</h3>
+                        <h6 class="bch-block-activity-subtitle">213 attività</h6>
+                    </div>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/5b213a323d974.jpeg/68.webp">
+                    <div class="bch-block-text-container">
+                        <h3 class="bch-block-activity-title">Rijksmuseum</h3>
+                        <h6 class="bch-block-activity-subtitle">75 attività</h6>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="barra-contenuti-homepage">
+            <h2 class="bch-title">Culture eccezionali in giro per il mondo</h2>
+            <div class="bch-container-small">
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/5ffeb4d8cea28.jpeg/150.webp">
+                    <h4 class="bch-block-activity-title">Londra</h4>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/f9cef1b5d3bf6e3c.jpeg/150.webp">
+                    <h4 class="bch-block-activity-title">Roma</h4>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/5d6e6ff882d75.jpeg/86.jpg">
+                    <h4 class="bch-block-activity-title">Atene</h4>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/7a914cbe2adc47ce.jpeg/86.jpg">
+                    <h4 class="bch-block-activity-title">Manchester</h4>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/5ca613b317678.jpeg/86.jpg">
+                    <h4 class="bch-block-activity-title">Marrekech</h4>
+                </a>
+                <a class="bch-single-block" href="#">
+                    <img class="bch-block-img" src="https://cdn.getyourguide.com/img/location/5c7aded6010a1.jpeg/86.jpg">
+                    <h4 class="bch-block-activity-title">Cambridge</h4>
+                </a>
+            </div>
+        </section>
+        <section class="barra-contenuti-homepage">
+            <div class="sottocategorie_header">
+                <a class="sc-title-link" href="#"><h4 class="sc-title">Attrazioni turistiche popolari</h4></a>
+                <a class="sc-title-link" href="#"><h4 class="sc-title">Le destinazioni migliori</h4></a>
+                <a class="sc-title-link" href="#"><h4 class="sc-title">I paesi da visitare</h4></a>
+                <a class="sc-title-link" href="#"><h4 class="sc-title">Categorie più cliccate</h4></a>
+            </div>
+            <div class="sottocategorie_container">
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Parigi</span>
+                    <span class="sc-item-description">1951 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Londra</span>
+                    <span class="sc-item-description">1643 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Dubai</span>
+                    <span class="sc-item-description">1284 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Roma</span>
+                    <span class="sc-item-description">2623 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >New York</span>
+                    <span class="sc-item-description">983 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Cracovia</span>
+                    <span class="sc-item-description">1161 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Amsterdam</span>
+                    <span class="sc-item-description">908 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Marrakech</span>
+                    <span class="sc-item-description">2124 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Barcellona</span>
+                    <span class="sc-item-description">1238 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Budapest</span>
+                    <span class="sc-item-description">604 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Praga</span>
+                    <span class="sc-item-description">886 tour e attività</span>
+                </a>
+                <a class="sc-block" href="#">
+                    <span class="sc-item-title" >Firenze</span>
+                    <span class="sc-item-description">1343 tour e attività</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="barra-contenuti-homepage">
+            <h2 class="bch-title">Immergiti nella musica da viaggio</h2>
+            <div class="bch-logo-container">
+                <img class="big-logo" src="spotify.png">
+                <span class="big-logo-title">Vivi al meglio la tua vacanza con Spotify</span>
+                <span>Clicca sotto per scoprire i consigli di Spotify </span>
+                <span class="search-button-cs">Vai!</span>
+            </div>
+            <div class="spotifyView-container hidden">
+                <img class="close-spotify" src="close.svg">
+                <div class="header-playlist">
+                    <img class="playlist-img" src="">
+                    <div class="playlist-title-des">
+                        <span class="group-type-spotify">Playlist</span>
+                        <span class="playlist-title"></span>
+                        <span class="playlist-des"></span>
+                        <div class="playlist-info">
+                            <div class="logo-with-des">
+                                <img class="small-logo" src="spotify.png">
+                                <span class="logo-des">Spotify</span>
+                            </div>
+                            <span class="playlist-info-text"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="background-songs">
+                    <div class="header-list-songs">
+                        <span class="progressivo-song">#</span>
+                        <span class="title-song">Titolo</span>
+                        <span class="album-song">Album</span>
+                        <span class="duration-song">Durata</span>
+                    </div>
+                    <div class="song-container">
+                        <div class="spec-song-container hidden">
+                            <span class="song_num"></span>
+                            <div class="spec-song-des">
+                                <img class="album-img" src="">
+                                <div class="spec-song-title-artist">
+                                    <span class="spec-song-title"></span>
+                                    <span class="spec-song-artist"></span>
+                                </div>
+                            </div>
+                            <span class="spec-song-album"></span>
+                            <span class="spec-song-duration"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+    </article>
+
+
+    <footer>
+        <div id="footer-scheme">
+            <section class="navigation_links">
+                <div class="navigation_link_block">
+                    <h3 class="footer-section">Lingua</h3>
+                    <select class="footer-selector" name="footer-language-selector" id="footer-language-selector"><option selected value="Italiano">Italiano</option><option value="English">English</option><option value="Spanish">Spanish</option></select>
+                    <h3 class="footer-section">Valuta</h3>
+                    <select class="footer-selector" name="footer-value-selector" id="footer-value-selector"><option selected value="Euro">Euro</option><option value="Dollar">Dollar</option></select>
+                </div>
+                <div class="navigation_link_block">
+                    <h3 class="footer-section">App</h3>
+                    <a class="link-appstore" href="#"><img class= "app-store-img" src="https://cdn.getyourguide.com/tf/assets/static/badges/google-play-badge-it-it.svg"></a>
+                    <a class="link-appstore" href="#"><img class= "app-store-img" src="https://cdn.getyourguide.com/tf/assets/static/badges/app-store-badge-it-it.svg"></a>
+                </div>
+                <div class="navigation_link_block">
+                    <div class="title-footer-section" data-sec-index="1">
+                        <h3 class="footer-section">Assistenza</h3>
+                        <img class="arrow-icon" src="arrow.svg">
+                    </div>
+                    <div class="link-footer-container" data-child-index="1">
+                        <a class="link-footer" href="#">Centro Assistenza</a>
+                        <a class="link-footer" href="#">Informazioni legali</a>
+                        <a class="link-footer" href="#">Informativa sulla privacy</a>
+                        <a class="link-footer" href="#">Cookie e preferenze di marketing</a>
+                        <a class="link-footer" href="#">Termini e condizioni generali</a>
+                        <a class="link-footer" href="#">Informazioni ai sensi della legge sui servizi digitali</a>
+                        <a class="link-footer" href="#">Mappa del sito</a>
+                        <a class="link-footer" href="#">Non vendere e non condividere le mie informazioni personali</a>
+                    </div>
+                </div>
+                <div class="navigation_link_block">
+                    <div class="title-footer-section" data-sec-index="2">
+                        <h3 class="footer-section">Azienda</h3>
+                        <img class="arrow-icon" src="arrow.svg">
+                    </div>
+                    <div class="link-footer-container" data-child-index="2">
+                        <a class="link-footer" href="#">Chi siamo</a>
+                        <a class="link-footer" href="#">Opportunità di lavoro</a>
+                        <a class="link-footer" href="#">Blog</a>
+                        <a class="link-footer" href="#">Rassegna stampa</a>
+                        <a class="link-footer" href="#">Buono regalo</a>
+                        <a class="link-footer" href="#">Explorer</a>
+                    </div>
+                </div>
+                <div class="navigation_link_block">
+                    <div class="navigation_link_block_small">
+                        <div class="title-footer-section" data-sec-index="3">
+                            <h3 class="footer-section">Collabora con noi</h3>
+                            <img class="arrow-icon" src="arrow.svg">
+                        </div>
+                        <div class="link-footer-container" data-child-index="3">
+                        <a class="link-footer" href="#">Come partner di fornitura</a>
+                        <a class="link-footer" href="#">Come content creator</a>
+                        <a class="link-footer" href="#">Come partner affiliato</a>
+                        </div>
+                    </div>
+                    <div class="navigation_link_block_small">
+                        <h3 class="footer-section">Metodi di pagamento</h3>
+                        <div class="payment-methods-img">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/paypal_border.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/mastercard.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/visa.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/maestro.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/amex.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/jcb.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/discover.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/sofort.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/klarna.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/googlepay.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/applepay.svg">
+                            <img class="payment-method" src="https://cdn.getyourguide.com/tf/assets/static/payment-methods/bancontact.svg">
+                        </div>
+                    </div>
+                </div>
+    
+            </section>
+            <section class="navigation_bar">
+                <span id="copyright-footer">© 2008 - 2024 GetYourGuide. Sviluppata a Catania.</span>
+                <nav class="social_links_nav">
+                    <a class="social_link" href="#"><img class= "logo_social_img" src="facebook_.png" alt="Facebook"></a>
+                    <a class="social_link" href="#"><img class= "logo_social_img" src="instagram_.png" alt="Instagram"></a>
+                    <a class="social_link" href="#"><img class= "logo_social_img" src="x_.png" alt="X"></a>
+                    <a class="social_link" href="#"><img class= "logo_social_img" src="pinterest_.png" alt="Pinterest"></a>
+                    <a class="social_link" href="#"><img class= "logo_social_img" src="linkedin_.png" alt="Linkedin"></a></nav>
+            </section>
+        </div>
+        
+    </footer>
+
+</body>
+
+
+</html>
